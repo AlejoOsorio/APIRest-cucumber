@@ -1,8 +1,8 @@
 package co.edu.uniquindio.ingesis;
 
-import io.cucumber.java.en.*;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class StepDefinitions {
 
