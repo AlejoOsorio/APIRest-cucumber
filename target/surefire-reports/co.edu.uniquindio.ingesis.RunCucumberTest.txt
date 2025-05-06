@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: co.edu.uniquindio.ingesis.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.403 s -- in co.edu.uniquindio.ingesis.RunCucumberTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.250 s <<< FAILURE! -- in co.edu.uniquindio.ingesis.RunCucumberTest
+Is it Friday yet?.Is it Friday yet? - Sunday isn't Friday -- Time elapsed: 0.157 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "Nope"
+ but was: "Yes"
+	at co.edu.uniquindio.ingesis.StepDefinitions.i_should_be_told(StepDefinitions.java:30)
+	at ✽.I should be told "Nope"(classpath:co/edu/uniquindio/ingesis/example.feature:7)
+
