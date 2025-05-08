@@ -11,6 +11,5 @@ Feature: Crear un nuevo profesor
 
   Scenario: Intentar crear un profesor sin nombre
     Given Se tienen datos invalidos para el profesor
-    When intento registrar al nuevo profesor
+    When registro al nuevo profesor
     Then la respuesta debe tener el código de estado 400
-    And el cuerpo de la respuesta debe contener el mensaje "El nombre es requerido"

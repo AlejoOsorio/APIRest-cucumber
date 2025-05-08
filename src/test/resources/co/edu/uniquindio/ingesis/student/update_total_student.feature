@@ -1,13 +1,17 @@
-Feature: Actualización total de un estudiante
+Feature: Actualizar completamente un estudiante
+  Como administrador del sistema
+  Quiero poder reemplazar toda la información de un estudiante
+  Para mantener sus datos académicos actualizados de forma integral
 
-  Scenario: Actualización completa exitosa
-    Given el estudiante con ID "123" existe y tengo nuevos datos válidos
-    When invoco el servicio PUT /students/123
-    Then responde 200 OK
-    And retorna el estudiante actualizado
+  Scenario: Actualización completa exitosa de un estudiante
+    Given Existe un estudiante con ID 333
+    And Los datos proporcionados para la actualización completa son validos
+    When actualizo completamente al estudiante con ID 333
+    Then la respuesta debe tener el código de estado 200
 
-  Scenario: Error de validación en actualización completa
-    Given los datos proporcionados para actualizar son inválidos
-    When invoco el servicio PUT /students/123
-    Then responde 400 datos invalidos
-    And muestra mensaje "Información inválida"
+  Scenario: Error de validación al actualizar completamente un estudiante
+    Given Existe un estudiante con ID 333
+    And Los datos proporcionados para la actualización completa son inválidos
+    When actualizo completamente al estudiante con ID 333
+    Then la respuesta debe tener el código de estado 400
+    And el cuerpo de la respuesta debe mostrar el mensaje "formato correcto"

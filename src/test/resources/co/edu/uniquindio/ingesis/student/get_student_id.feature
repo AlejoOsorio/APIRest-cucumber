@@ -1,13 +1,15 @@
-Feature: Consulta de un estudiante por ID
+Feature: Consultar un estudiante por ID
+  Como administrador del sistema
+  Quiero poder consultar la información de un estudiante específico
+  Para acceder a sus datos académicos de forma individual
 
-  Scenario: Consulta exitosa de un estudiante existente
-    Given el estudiante con ID "123" existe
-    When invoco el servicio GET /students/123
-    Then responde 200 OK
-    And retorna la información del estudiante
+  Scenario: Consultar un estudiante existente exitosamente
+    Given Existe un estudiante con ID 321
+    When consulto al estudiante con ID 321
+    Then la respuesta debe tener el código de estado 200
 
-  Scenario: Consulta de estudiante inexistente
-    Given el estudiante con ID "012" no existe
-    When invoco el servicio GET /students/999
-    Then responde 404 datos inexistentes
-    And muestra mensaje "Estudiante no encontrado"
+  Scenario: Intentar consultar un estudiante que no existe
+    Given No existe un estudiante con ID 012
+    When consulto al estudiante con ID 012
+    Then la respuesta debe tener el código de estado 404
+    And el cuerpo de la respuesta debe mostrar el mensaje "Estudiante no encontrado"

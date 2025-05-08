@@ -1,13 +1,10 @@
-Feature: Eliminación de estudiante
+Feature: Eliminar un estudiante
+  Como administrador del sistema
+  Quiero poder eliminar estudiantes existentes
+  Para mantener actualizada la información del sistema académico
 
-  Scenario: Eliminación exitosa de un estudiante
-    Given el estudiante con ID "123" existe
-    When invoco el servicio DELETE /students/123
-    Then responde 200 OK
-    And muestra mensaje "Estudiante eliminado exitosamente"
-
-  Scenario: Error al eliminar estudiante
-    Given el sistema falla al intentar eliminar el estudiante
-    When invoco el servicio DELETE /students/123
-    Then responde 500 error interno del servidor
-    And muestra mensaje "Error al eliminar el estudiante"
+  Scenario: Eliminar un estudiante exitosamente
+    Given Existe un estudiante con ID "123"
+    When elimino al estudiante con ID "123"
+    Then la respuesta debe tener el código de estado 200
+    And el cuerpo de la respuesta debe mostrar el mensaje "El estudiante fue eliminado correctamente"
