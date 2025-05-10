@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
@@ -25,7 +24,7 @@ public class StepsDeleteSubject {
             String message = response.jsonPath().getString("message");
 
             if ("Materia no encontrada".equals(message)) {
-                HashMap<Object, Object> data = new HashMap<>();
+                HashMap<Object, Object> data;
                 data = new HashMap<>();
                 data.put("name", "Programación I");
                 data.put("description", "Introducción a la programación en Java");

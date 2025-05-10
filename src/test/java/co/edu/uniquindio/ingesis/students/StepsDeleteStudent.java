@@ -8,7 +8,6 @@ import io.restassured.response.Response;
 
 import java.time.LocalDate;
 import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
