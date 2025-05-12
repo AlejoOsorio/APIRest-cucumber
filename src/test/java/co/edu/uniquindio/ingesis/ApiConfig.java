@@ -6,7 +6,7 @@ import io.restassured.http.ContentType;
 
 public class ApiConfig {
     public static final RequestSpecification BASE_REQUEST = new RequestSpecBuilder()
-            .setBaseUri("http://localhost:8080")
+            .setBaseUri("http://localhost:8100")
             .setContentType(ContentType.JSON)
             .build();
 }
