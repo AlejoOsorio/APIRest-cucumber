@@ -20,6 +20,7 @@ public class StepsDeleteStudent {
     @Given("Existe un estudiante con ID {string}")
     public void existeUnEstudianteConID(String studentId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .get("students/" + studentId);
 
         if (response.getStatusCode() == 404) {

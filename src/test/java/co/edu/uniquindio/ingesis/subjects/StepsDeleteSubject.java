@@ -18,6 +18,7 @@ public class StepsDeleteSubject {
     @Given("Existe una materia con ID {int}")
     public void existeUnaMateriaConID(int subjectId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .get("subjects/" + subjectId);
 
         if (response.getStatusCode() == 404) {
@@ -54,6 +55,7 @@ public class StepsDeleteSubject {
     @Given("No existe una materia con ID {int}")
     public void noExisteUnaMateriaConID(int subjectId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .get("subjects/" + subjectId);
 
         if (response.getStatusCode() == 200) {

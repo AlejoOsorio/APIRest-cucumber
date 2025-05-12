@@ -20,6 +20,7 @@ public class StepsGetProfessor {
     @Given("existe un profesor con ID {int} con datos validos")
     public void existeUnProfesorConIDConDatosValidos(int professorId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .get("professors/" + professorId);
 
         if (response.getStatusCode() == 404) {

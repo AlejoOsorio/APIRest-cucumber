@@ -20,6 +20,7 @@ public class StepsGetStudentId {
     @Given("Existe un estudiante con ID {int}")
     public void existeUnEstudianteConID(int studentId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .get("students/" + studentId);
 
         if (response.getStatusCode() == 404) {
@@ -57,6 +58,7 @@ public class StepsGetStudentId {
     @Given("No existe un estudiante con ID {int}")
     public void noExisteUnEstudianteConID(int studentId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .get("students/" + studentId);
 
         if (response.getStatusCode() == 200) {

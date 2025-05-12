@@ -20,6 +20,7 @@ public class StepsDeleteProfessor {
     @Given("existe un profesor con ID {int}")
     public void existeUnProfesorConID(int professorId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .get("professors/" + professorId);
 
         if (response.getStatusCode() == 404) {
@@ -49,6 +50,7 @@ public class StepsDeleteProfessor {
     @When("elimino el profesor con ID {int}")
     public void eliminoElProfesorConID(int professorId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .when()
                 .delete("/professors/" + professorId);
         context.setResponse(response);
@@ -62,6 +64,7 @@ public class StepsDeleteProfessor {
     @Given("no existe un profesor con ID {int}")
     public void noExisteUnProfesorConID(int professorId) {
         response = given()
+                .spec(ApiConfig.BASE_REQUEST)
                 .get("professors/" + professorId);
 
         if (response.getStatusCode() == 200) {
