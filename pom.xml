@@ -131,7 +131,11 @@
             <version>42.7.3</version> <!-- Usa la versión más reciente si es posible -->
         </dependency>
 
-
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.8.1</version>
+        </dependency>
     </dependencies>
 
     <build>
