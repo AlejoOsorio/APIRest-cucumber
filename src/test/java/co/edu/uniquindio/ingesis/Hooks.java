@@ -35,7 +35,7 @@ public class Hooks {
     public static void generateReport() {
         File reportOutputDirectory = new File("target/cucumber-reports");
         List<String> jsonFiles = new ArrayList<>();
-        jsonFiles.add("target/cucumber.json");
+        jsonFiles.add("target/cucumber-reports/report.json");
 
         Configuration configuration = new Configuration(reportOutputDirectory, "Mi Proyecto");
         configuration.addClassifications("Plataforma", "Windows");
